@@ -1,0 +1,1 @@
+InkScroll is a manhwa discovery web app built JavaScript and the MangaDex API. Users can search, filter by genre, and sort titles — with favorites saved locally.
