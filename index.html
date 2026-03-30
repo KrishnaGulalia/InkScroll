@@ -23,5 +23,42 @@
         </div>
     </section>
 
+
+    <section class="filters">
+
+
+        <div class="genre-buttons" id="genreButtons">
+            <button class="genre-btn active" data-genre="all">All</button>
+            <button class="genre-btn" data-genre="Action">Action</button>
+            <button class="genre-btn" data-genre="Romance">Romance</button>
+            <button class="genre-btn" data-genre="Fantasy">Fantasy</button>
+            <button class="genre-btn" data-genre="Comedy">Comedy</button>
+            <button class="genre-btn" data-genre="Horror">Horror</button>
+            <button class="genre-btn" data-genre="Drama">Drama</button>
+        </div>
+
+        <select id="sortSelect">
+            <option value="relevance">Sort: Relevance</option>
+            <option value="rating">Sort: Top Rated</option>
+            <option value="latest">Sort: Latest</option>
+            <option value="title">Sort: A → Z</option>
+        </select>
+
+    </section>
+
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <p>Fetching manhwa...</p>
+    </div>
+
+
+    <main class="cards-grid" id="cardsGrid">
+    </main>
+
+    <div class="no-results hidden" id="noResults">
+        <p>😔 No manhwa found. Try a different search.</p>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
