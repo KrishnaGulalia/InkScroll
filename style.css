@@ -199,24 +199,14 @@ body {
     to { transform: rotate(360deg); }
 }
 /*loader From Uiverse.io by narmesh_sah */ 
-.parent-loader {
+/* .parent-loader {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.loader {
-  position: relative;
-  /* top: 80px; */
-  display: flex;
-  height: 120px;
-  width: 120px;
+} */
 
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(0 0 2px #fff);
-}
 
-.crack {
+/* .crack {
   position: absolute;
   width: 10%;
   aspect-ratio: 1;
@@ -257,7 +247,7 @@ body {
   to {
     rotate: 360deg;
   }
-}
+} */
 
 
 .cards-grid {
