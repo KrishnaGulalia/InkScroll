@@ -364,3 +364,8 @@ body {
         gap: 1rem;
     }
 }
+.card-score {
+    font-size: 0.8rem;
+    color: var(--accent);
+    margin: 0.3rem 0;
+}
