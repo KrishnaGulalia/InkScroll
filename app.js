@@ -16,7 +16,8 @@ async function fetchManhwa() {
     cardsGrid.innerHTML = '';
 
     try {
-        const url = 'https://corsproxy.io/?https://api.mangadex.org/manga?limit=40&contentRating[]=safe&includes[]=cover_art&order[followedCount]=desc&originalLanguage[]=ko';
+        const baseUrl = 'https://api.mangadex.org/manga?limit=40&contentRating[]=safe&includes[]=cover_art&order[followedCount]=desc&originalLanguage[]=ko';
+        const url = 'https://corsproxy.io/?' + encodeURIComponent(baseUrl);
         const response = await fetch(url);
         const data = await response.json();
 
