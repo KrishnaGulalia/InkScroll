@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-    --bg: #0f0f13;
-    --surface: #1a1a24;
-    --surface-hover: #22222f;
-    --border: #2a2a3a;
-    --accent: #e8c547;
-    --accent-dim: rgba(232, 197, 71, 0.15);
+    --bg: #080810;
+    --surface: #111118;
+    --surface-hover: #1a1a24;
+    --card-bg: #0f0f16;
+    --border: #1e1e2e;
+    --accent: #00FOFF;
+    --accent-dim: rgba(0, 255, 255, 0.12);
     --text-primary: #f0f0f0;
     --text-secondary: #888899;
     --card-bg: #16161f;
@@ -44,9 +45,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: var(--navbar-bg);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
+    background: rgba(8, 8, 16, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +59,7 @@ body {
     font-size: 1.8rem;
     letter-spacing: 2px;
     color: var(--accent);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
 }
 
 .theme-toggle {
@@ -116,7 +118,8 @@ body {
 
 .search-bar input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-dim);
+    box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1),
+                0 0 20px rgba(0, 255, 255, 0.08);
 }
 
 .search-bar input::placeholder {
@@ -149,6 +152,14 @@ body {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.85rem;
     transition: all 0.2s ease;
+}
+.genre-tag {
+    background: transparent;
+    color: var(--accent);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .genre-btn:hover {
@@ -269,10 +280,10 @@ body {
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.15),
+                0 12px 32px rgba(0, 0, 0, 0.6);
     border-color: var(--accent);
 }
-
 .card img {
     width: 100%;
     aspect-ratio: 2/3;
