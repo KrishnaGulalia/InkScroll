@@ -9,7 +9,6 @@ const themeToggle = document.getElementById('themeToggle');
 let allManhwa = [];
 let filteredManhwa = [];
 let activeGenre = 'all';
-let favorites = JSON.parse(localStorage.getItem('inkscroll-favs')) || [];
 
 async function fetchManhwa() {
     loader.classList.remove('hidden');
@@ -46,19 +45,17 @@ function displayCards(manhwaList) {
     }
 
     noResults.classList.add('hidden');
+    document.getElementById('resultsCount').textContent = `Showing ${manhwaList.length} results`;
+    
 
     cardsGrid.innerHTML = manhwaList.map(manga => {
         const title = manga.title || 'Unknown Title';
         const coverUrl = manga.images.jpg.image_url;
         const genres = manga.genres.slice(0, 3).map(g => g.name);
         const score = manga.score ? manga.score.toFixed(1) : 'N/A';
-        const isFav = favorites.includes(String(manga.mal_id));
 
         return `
             <div class="card" data-id="${manga.mal_id}">
-                <button class="fav-btn" data-id="${manga.mal_id}">
-                    ${isFav ? '❤️' : '🤍'}
-                </button>
                 <img
                     src="${coverUrl}"
                     alt="${title}"
@@ -74,13 +71,6 @@ function displayCards(manhwaList) {
             </div>
         `;
     }).join('');
-
-    document.querySelectorAll('.fav-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggleFavorite(btn.dataset.id, btn);
-        });
-    });
 }
 
 function applyFilters() {
@@ -118,19 +108,6 @@ function applyFilters() {
     filteredManhwa = result;
     displayCards(filteredManhwa);
 }
-
-
-function toggleFavorite(id, btn) {
-    if (favorites.includes(id)) {
-        favorites = favorites.filter(favId => favId !== id);
-        btn.textContent = '🤍';
-    } else {
-        favorites.push(id);
-        btn.textContent = '❤️';
-    }
-    localStorage.setItem('inkscroll-favs', JSON.stringify(favorites));
-}
-
 
 searchInput.addEventListener('input', applyFilters);
 
