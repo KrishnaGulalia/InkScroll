@@ -79,7 +79,7 @@ CSS Grid — responsive card layout with `auto-fill` and `minmax`
 
 Why I Switched from MangaDex to Jikan
 
-The original plan was to use the MangaDex API, which has a larger manhwa library and provides more detailed metadata. However, during development we encountered a consistent CORS policy error:
+The original plan was to use the MangaDex API, which has a larger manhwa library and provides more detailed metadata. However, during development Encountered CORS issue that wasnt allowing me to deploy and use the api effectively so I decided to switch the API altogether for a smooth experince and no failed fetch requests again and again , this was done as the last alternative to mangadex as that api was not fetching at all due to policy error.
 
 ```
 Access to fetch at 'https://api.mangadex.org/...' has been blocked by CORS policy:
